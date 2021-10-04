@@ -1,5 +1,20 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.nombre}}
-  </li>
-</ul>
+<app-menu></app-menu>
+
+<router-outlet></router-outlet>
+
+<!-- <div class="content" role="main">
+  <div class="card">
+    <div class="form-group">
+      <label for="search-text">Search Text</label>
+      <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+        [(ngModel)]="items" placeholder="Enter text to search" 
+        autofocus>
+    </div>
+    <ul class="list-group list-group-flush"> -->
+      <!-- results of ngFor is passed to appFilter with argument searchText -->
+      <!-- <li class="list-group-item" *ngFor="let c of characters | myfilter: items">
+        {{c.nombre}}
+      </li>
+    </ul>
+  </div>
+</div> -->

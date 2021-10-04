@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    width: 200px;
+    margin: auto;
+    background-color: grey;
+    text-align: center;
+}
+.ul{
+    list-style: none;
+}

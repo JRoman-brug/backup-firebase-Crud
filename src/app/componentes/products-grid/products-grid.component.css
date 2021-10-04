@@ -1,0 +1,99 @@
+.container {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    width: 80%;
+    height:650px;
+    background: #54494B;
+    margin: auto;
+    border-radius: 5px;
+    padding-bottom:10px ;
+}
+
+.header {
+    display: flex;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header .btnAdd {
+    width: 100px;
+    height: 30px;
+    background: #91C7B1;
+    border: none;
+    border-radius: 5px;
+    transition: .3s background, 0.3s color;
+}
+
+.header .btnAdd:hover {
+    background: #91C7B1dd;
+    color: #fff;
+}
+
+.header__container .input input {
+    width: 400px;
+}
+
+.containerGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+.gridItem {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #F1F7ED;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gridItem .img {
+    width: 250px;
+    height: 250px;
+    background: url("https://http2.mlstatic.com/D_NQ_NP_964387-MLA29761650655_032019-O.jpg");
+    background-size: contain;
+}
+.container-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+    /* padding: 10px; */
+}
+.container-buttons button{
+    margin: auto;
+    width: 80%;
+    height: 25px;
+}
+
+.container .edit{
+    background:#E3D081;
+    border: none;
+    border-radius: 5px;
+    transition: .3s background, 0.3s color;
+}
+.container .edit:hover{
+    background: #E3D081dd;
+    color: #fff;
+}
+
+.container .delete{
+    background:#B33951;
+    border: none;
+    border-radius: 5px;
+    transition: .3s background, 0.3s color;
+}
+.container .delete:hover{
+    background: #B33951dd;
+    color: #fff;
+}

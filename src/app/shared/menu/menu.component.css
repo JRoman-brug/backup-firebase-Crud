@@ -1,0 +1,24 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    background: #54494B;
+}
+
+.menu .container{
+    margin: auto;
+    text-align: center;
+}
+
+.menu .container a{
+    text-decoration: none;
+    color:#F1F7EDff;
+    transition: .3s color, 0.1s border-bottom;
+    border-bottom: 2px none #B3395100;
+}
+
+.menu .container a:hover{
+    color: #F1F7EDaa;
+    border-bottom: 2px solid #B33951;
+}

@@ -6,17 +6,30 @@ import { AppComponent } from './app.component';
 
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MyFilterPipe } from './filter.pipe';
+import { MenuComponent } from './shared/menu/menu.component';
+import { ProductsGridComponent } from './componentes/products-grid/products-grid.component';
+import { AgregarProductsComponent } from './componentes/agregar-products/agregar-products.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyFilterPipe,
+    MenuComponent,
+    ProductsGridComponent,
+    AgregarProductsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

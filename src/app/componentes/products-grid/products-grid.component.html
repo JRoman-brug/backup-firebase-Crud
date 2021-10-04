@@ -1,0 +1,28 @@
+<p>produca ts-grid works!</p>
+
+<div class="container">
+    <div class="header">
+        <div class="header__container">
+            <div class="input">
+                <label for=""></label>
+                <input type="search" name="" id="">
+            </div>
+            <button class="btnAdd" routerLink="/addProducts">Agregar</button>
+        </div>
+    </div>
+    <div class="containerGrid">
+        <div class="gridItem" *ngFor="let product of products"> 
+            <div class="img">
+                
+            </div>
+            <!-- <img src="https://www.centrogar.com.ar/image/cache/data/journal2/PRODUCTOS/TECNOLOGIA/Calculadoras/Calculadora%20Casio%20fx-82MS-500x500.jpg"
+                alt=""> -->
+            <p>{{product.product}}</p>
+            <p>Price: {{product.precio|currency}}</p>
+            <div class="container-buttons">
+                <button class="edit" (click)="editarProduct()">Edit</button>
+                <button class="delete" (click)="eliminarProduct(product.id)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

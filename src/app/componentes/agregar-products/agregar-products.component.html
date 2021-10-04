@@ -1,0 +1,15 @@
+<div class="container">
+    <form action="" class="form" [formGroup]="form" (ngSubmit)="enviar()">
+        <h1>{{title}}</h1>
+
+        <div class="container__input">
+            <input type="text" placeholder="Producto" id="Producto" formControlName="producto">
+            <input type="number" placeholder="Precio" id="Precio"  formControlName="precio">
+            <input type="text" placeholder="Imagen" id="Imagen"  formControlName="image">
+        </div>
+        <div class="container__buttons">
+            <button class="cancelar">Cancelar</button>
+            <button class="aceptar" (click)="enviar()">Aceptar</button>
+        </div>
+    </form>
+</div>
