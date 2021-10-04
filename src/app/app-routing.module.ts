@@ -13,6 +13,9 @@ const routes: Routes = [
   },
   {
     path:"addProducts",component:AgregarProductsComponent
+  },
+  {
+    path:"editarProducts/:productId",component:AgregarProductsComponent
   }
 ];
 

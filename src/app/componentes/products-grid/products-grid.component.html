@@ -20,7 +20,7 @@
             <p>{{product.product}}</p>
             <p>Price: {{product.precio|currency}}</p>
             <div class="container-buttons">
-                <button class="edit" (click)="editarProduct()">Edit</button>
+                <button class="edit" (click)="editarProduct(product.id)">Edit</button>
                 <button class="delete" (click)="eliminarProduct(product.id)">Eliminar</button>
             </div>
         </div>

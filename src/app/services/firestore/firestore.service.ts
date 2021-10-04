@@ -13,12 +13,15 @@ export class FirestoreService {
   getProducts(): Observable<any>{
     return this.fbs.collection('Productos').snapshotChanges()
   }
-
   addColletion(producto:any):Promise<any>{
     return this.fbs.collection('Productos').add(producto)
   }
-
-
+  getProduct(id:string): Observable<any>{
+    return this.fbs.collection('Productos').doc(id).snapshotChanges()
+  }
+  updateProduct(id:string,product:any){
+    this.fbs.collection('Productos').doc(id).update(product);
+  }
   deletePersonas(id:string): Promise<any>{
     return this.fbs.collection('Productos').doc(id).delete()
   }

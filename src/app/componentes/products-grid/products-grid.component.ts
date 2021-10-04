@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouteConfigLoadEnd, Router } from '@angular/router';
 import { FirestoreService } from 'src/app/services/firestore/firestore.service';
 import { Product } from '../agregar-products/product';
 
@@ -11,7 +12,7 @@ export class ProductsGridComponent implements OnInit {
 
   products!: Product[];
 
-  constructor(private fbs: FirestoreService) { }
+  constructor(private fbs: FirestoreService,  private route: Router) { }
 
   ngOnInit(): void {
     this.obtenerColeccion();
@@ -39,7 +40,7 @@ export class ProductsGridComponent implements OnInit {
       })
   }
 
-  editarProduct(){
-    
+  editarProduct(productId:string){
+    this.route.navigate(['editarProducts',productId]);
   }
 }
