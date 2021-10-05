@@ -11,6 +11,7 @@ import { Product } from '../agregar-products/product';
 export class ProductsGridComponent implements OnInit {
 
   products!: Product[];
+  filterProduct:string = "";
 
   constructor(private fbs: FirestoreService,  private route: Router) { }
 

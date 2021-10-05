@@ -26,11 +26,15 @@ export class AgregarProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Es saca el parametro
     this.route2.params.subscribe(({ productId }) => {
       this.productId = productId
     })
+    
     if (this.productId) {
-      // this.editarProduct(this.productId);
+
+      this.title = "Editar Informarcion"
+      //Esto setea los campos
       this.route2.params.subscribe(({ productId }) => {
         this.fbs.getProduct(productId).subscribe(data => {
           this.form.patchValue({
@@ -43,11 +47,6 @@ export class AgregarProductsComponent implements OnInit {
     }
 
   }
-
-  editarAgregarProduct() {
-    
-  }
-
 
   agregarProduct() {
     this.fbs.addColletion(
@@ -69,6 +68,12 @@ export class AgregarProductsComponent implements OnInit {
   }
 
   submit() {
+    if(this.productId){
+      this.editarProduct(this.productId);
+    }
+    else{
+      this.agregarProduct()
+    }
     this.route.navigate(['productsGrid'])
   }
 }

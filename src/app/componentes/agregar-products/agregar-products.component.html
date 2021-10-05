@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="" class="form" [formGroup]="form" (ngSubmit)="agregarProduct()">
+    <form action="" class="form" [formGroup]="form" (ngSubmit)="submit()">
         <h1>{{title}}</h1>
 
         <div class="container__input">
@@ -9,7 +9,7 @@
         </div>
         <div class="container__buttons">
             <button class="cancelar">Cancelar</button>
-            <button class="aceptar" (click)="agregarProduct()">Aceptar</button>
+            <button class="aceptar" (click)="submit()">Aceptar</button>
         </div>
     </form>
 </div>

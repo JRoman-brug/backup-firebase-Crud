@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'myfilter',
+  name: 'filter',
 })
 export class MyFilterPipe implements PipeTransform {
 
@@ -10,7 +10,7 @@ export class MyFilterPipe implements PipeTransform {
   
 
     for (let post of items) {
-      if (post.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+      if (post.product.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultadoPost.push(post);
       }
     }

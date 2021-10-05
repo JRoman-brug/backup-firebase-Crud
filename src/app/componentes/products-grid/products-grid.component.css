@@ -57,11 +57,9 @@
     overflow: hidden;
 }
 
-.gridItem .img {
+.gridItem .img img{
     width: 250px;
     height: 250px;
-    background: url("https://http2.mlstatic.com/D_NQ_NP_964387-MLA29761650655_032019-O.jpg");
-    background-size: contain;
 }
 .container-buttons{
     display: flex;
