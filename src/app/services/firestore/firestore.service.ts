@@ -1,28 +1,50 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Product } from 'src/app/componentes/agregar-products/product';
+
+
+export interface Productos { product: string, precio: number, image: string }
+export interface ProductosId { id: string; }
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirestoreService {
 
-  constructor(private fbs:AngularFirestore) { }
+  private productosCollection: AngularFirestoreCollection<Productos>;
+  private productos: Observable<ProductosId[]>;
 
-  getProducts(): Observable<any>{
-    return this.fbs.collection('Productos').snapshotChanges()
+  constructor(private fbs: AngularFirestore) {
+
+    this.productosCollection = fbs.collection<Productos>('Productos');
+
+    this.productos = this.productosCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as Productos;
+        const id = a.payload.doc.id;
+        return { id, data };
+      }))
+    );
   }
-  addColletion(producto:any):Promise<any>{
+
+
+
+
+  getProducts():Observable<any> {
+    return this.productos
+  }
+
+  addColletion(producto: any): Promise<any> {
     return this.fbs.collection('Productos').add(producto)
   }
-  getProduct(id:string): Observable<any>{
+  getProduct(id: string): Observable<any> {
     return this.fbs.collection('Productos').doc(id).snapshotChanges()
   }
-  updateProduct(id:string,product:any){
+  updateProduct(id: string, product: any) {
     this.fbs.collection('Productos').doc(id).update(product);
   }
-  deletePersonas(id:string): Promise<any>{
+  deletePersonas(id: string): Promise<any> {
     return this.fbs.collection('Productos').doc(id).delete()
   }
 }

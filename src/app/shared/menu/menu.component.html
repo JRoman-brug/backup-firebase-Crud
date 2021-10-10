@@ -1,7 +1,12 @@
 <nav class="menu">
-    <div class="container">
-        <h1 class="logo">LOGO</h1>
-
-        <a routerLink="productsGrid">Productos</a>
-    </div>
+   <div class="container__logo">
+       <h1>Logo</h1>
+   </div>
+   <div class="container__links">
+       <a routerLink="/productos">Productos</a>
+   </div>
+   <div class="container__login">
+       <button class="btn btn-primary" (click)="singOut()" *ngIf="user" >Log Out</button>
+       <a routerLink="login"><i class="fas fa-user" *ngIf="!user"></i></a>
+   </div>
 </nav>

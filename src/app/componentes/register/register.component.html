@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="login">
+        <div class="container__title">
+            <h1>Crear cuenta</h1>
+        </div>
+
+        <form action="" class="form" [formGroup]="form" (ngSubmit)="onRegister()">
+            <input type="mail" class="input" placeholder="Email" formControlName="mail">
+            <input type="password" class="input" placeholder="Contraseña" formControlName="password">
+            <input type="password" class="input" placeholder="Confirmar contraseña" formControlName="confirmPassword">
+            <button class="btn btn-secundary" id="btn">Acceder</button>
+        </form>
+
+        <div class="container__links">
+            <p>Tiene cuenta? <a routerLink="/login">Iniciar sesión</a></p>
+        </div>
+        <div class="divider"></div>
+        
+        <div class="container__cuentas">
+            <p>Para acceder directamente como miembro, puede utilizar la cuenta y la contraseña que aparecen a continuación</p>
+            <div class="container__buttons">
+                <button class="btn btn-secundary"><i class="fab fa-facebook-f"></i> Facebook</button>
+                <button class="btn btn-secundary"> <i class="fab fa-google"></i> Google</button>
+            </div>
+        </div>
+    </div>
+</div>
